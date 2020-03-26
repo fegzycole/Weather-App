@@ -1,6 +1,6 @@
 const displayArea = document.querySelector('.result');
 
-const contentLoader = response => {
+const contentLoader = (response) => {
   displayArea.innerHTML = '';
 
   const cityInfo = document.createElement('div');
@@ -11,25 +11,13 @@ const contentLoader = response => {
 
   const temperature = document.createElement('h3');
   temperature.classList.add('temp');
-  temperature.innerHTML = `${Math.floor(
-    response.main.temp
-  )}<span>&#xb0;</span>C`;
+  temperature.innerHTML = `${Math.floor(response.main.temp)}<span>&#xb0;</span>C`;
 
   temperature.addEventListener('click', () => {
-    console.log(
-      temperature.innerHTML ===
-        `${Math.floor(response.main.temp)}<span>°</span>C`
-    );
-    if (
-      temperature.innerHTML ===
-      `${Math.floor(response.main.temp)}<span>°</span>C`
-    ) {
-      temperature.innerHTML = `${Math.floor((response.main.temp / 5) * 9) +
-        32}<span>&#xb0;</span>F`;
+    if (temperature.innerHTML === `${Math.floor(response.main.temp)}<span>°</span>C`) {
+      temperature.innerHTML = `${Math.floor(((response.main.temp) / 5) * 9) + 32}<span>&#xb0;</span>F`;
     } else {
-      temperature.innerHTML = `${Math.floor(
-        response.main.temp
-      )}<span>&#xb0;</span>C`;
+      temperature.innerHTML = `${Math.floor(response.main.temp)}<span>&#xb0;</span>C`;
     }
   });
 
