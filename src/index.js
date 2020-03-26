@@ -6,6 +6,18 @@ import contentLoader from './contentLoader';
 
 const searchBox = document.querySelector('#location');
 
+const container = document.querySelector('.container');
+
+const toggleBtn = document.querySelector('.toggle-btn');
+
+container.addEventListener('click', () => {
+  if (toggleBtn.classList.contains('active')) {
+    toggleBtn.classList.remove('active');
+  } else {
+    toggleBtn.classList.add('active');
+  }
+});
+
 const searchIcon = document.querySelector('.search-logo');
 
 const loader = document.querySelector('.loader');
@@ -18,13 +30,20 @@ const resultArea = document.querySelector('.result');
 searchIcon.addEventListener('click', async () => {
   resultArea.innerHTML = '';
   loader.setAttribute('style', 'display: block !important');
-  const response = await dataController.getWeatherInfo(searchBox.value);
-  loader.removeAttribute('style');
 
-  if (response === 'City not found') {
+  const unit = toggleBtn.classList.contains('active') ? 'imperial' : 'metric';
+  try {
+    const response = await dataController.getWeatherInfo(searchBox.value, unit);
+    loader.removeAttribute('style');
+
+    if (response === 'City not found') {
+      errorMessage.setAttribute('style', 'display: block !important');
+    } else {
+      errorMessage.removeAttribute('style');
+      contentLoader(response);
+    }
+  } catch (error) {
     errorMessage.setAttribute('style', 'display: block !important');
-  } else {
-    errorMessage.removeAttribute('style');
-    contentLoader(response);
+    errorMessage.innerText = error.message;
   }
 });
