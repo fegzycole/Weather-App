@@ -1,0 +1,109 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: url('../images/valentin-muller-bWtd1ZyEy6w-unsplash.jpg');
+}
+
+.weatherArea {
+  width: 400px;
+  margin: 100px auto;
+}
+
+.queryArea {
+  display: flex;
+}
+
+.header-text{
+  text-align: center;
+  color: white;
+  padding-top: 50px;
+  font-size: 40px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.location-box {
+  background-color: inherit;
+  border: none;
+  border-bottom: 1px solid white;
+  padding: 5px 15px;
+  color: #fff;
+  font-size: 20px;
+
+  &::placeholder {
+    color: #fff;
+  }
+}
+
+.search-logo {
+  color: white;
+  font-size: 20px !important;
+  margin-top: 10px;
+  cursor: pointer;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+.loader {
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid rgb(155, 150, 150); /* Blue */
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  animation: spin 2s linear infinite;
+  margin: 40px auto;
+  display: none;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.error-message {
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+  margin-top: 30px;
+  text-align: center;
+  font-size: 18px;
+  padding: 0;
+  display: none;
+}
+
+.city-info {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+
+  h3 {
+    color: white;
+    font-size: 36px;
+    font-family: 'Open Sans', sans-serif;
+  }
+}
+
+.weather-description,
+.wind-desc {
+  display: flex;
+  width: 400px;
+  margin: 10px auto;
+  align-items: center;
+
+  .weather-desc {
+    color: white;
+    font-size: 30px;
+    margin-left: 3px;
+    font-family: 'Open Sans', sans-serif;
+  }
+}
+
+.result {
+  text-align: center;
+}
+
+.temp {
+  cursor: pointer;
+}
