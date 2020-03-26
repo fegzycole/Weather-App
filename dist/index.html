@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Weather App</title>
+</head>
+<body>
+  <div id="content">
+    <h3 class="header-text">Weather App</h3>
+
+    <div class="weatherArea">
+      <div class="queryArea">
+        <input type="text" name="Location" id="location" placeholder="Location" class="location-box">
+        <i class="fa fa-search search-logo"></i>
+      </div>
+
+      <div class="resultArea">
+        <div class="loader"></div>
+        <div class="error-message">City not found</div>
+        <div class="result"></div>
+      </div>
+    </div>
+
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,154 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: url("../images/valentin-muller-bWtd1ZyEy6w-unsplash.jpg");
+}
+
+.weatherArea {
+  width: 400px;
+  margin: 100px auto;
+}
+
+.queryArea {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.header-text {
+  text-align: center;
+  color: white;
+  padding-top: 50px;
+  font-size: 40px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.location-box {
+  background-color: inherit;
+  border: none;
+  border-bottom: 1px solid white;
+  padding: 5px 15px;
+  color: #fff;
+  font-size: 20px;
+}
+
+.location-box::-webkit-input-placeholder {
+  color: #fff;
+}
+
+.location-box:-ms-input-placeholder {
+  color: #fff;
+}
+
+.location-box::-ms-input-placeholder {
+  color: #fff;
+}
+
+.location-box::placeholder {
+  color: #fff;
+}
+
+.search-logo {
+  color: white;
+  font-size: 20px !important;
+  margin-top: 10px;
+  cursor: pointer;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+.loader {
+  border: 16px solid #f3f3f3;
+  /* Light grey */
+  border-top: 16px solid #9b9696;
+  /* Blue */
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  -webkit-animation: spin 2s linear infinite;
+          animation: spin 2s linear infinite;
+  margin: 40px auto;
+  display: none;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+.error-message {
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+  margin-top: 30px;
+  text-align: center;
+  font-size: 18px;
+  padding: 0;
+  display: none;
+}
+
+.city-info {
+  margin-top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.city-info h3 {
+  color: white;
+  font-size: 36px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.weather-description,
+.wind-desc {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 400px;
+  margin: 10px auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.weather-description .weather-desc,
+.wind-desc .weather-desc {
+  color: white;
+  font-size: 30px;
+  margin-left: 3px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.result {
+  text-align: center;
+}
+
+.temp {
+  cursor: pointer;
+}
+/*# sourceMappingURL=style.css.map */
