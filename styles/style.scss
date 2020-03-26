@@ -13,6 +13,42 @@ body {
   margin: 100px auto;
 }
 
+.container {
+  width: 180px;
+  margin: 50px auto 10px auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.deg {
+  color: white;
+  font-size: 25px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+}
+
+.toggle-btn {
+  width: 80px;
+  height: 40px;
+  background: inherit;
+  border: 1px solid white;
+  border-radius: 30px;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.toggle-btn > .inner-circle {
+  width: 30px;
+  height: 30px;
+  background: white;
+  border-radius: 50%;
+}
+
+.toggle-btn.active > .inner-circle{
+  margin-left: 40px;
+}
+
 .queryArea {
   display: flex;
 }
