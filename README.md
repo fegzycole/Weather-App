@@ -62,7 +62,7 @@ This project was built with Javascript
 
 ## Live Version
 
-- You can view the app [Here](https://fegzycole.github.io/Restaurant-Page/)
+- You can view the app [Here](https://fegzycole.github.io/Weather-App/)
 
 <!-- ROADMAP -->
 ## Roadmap
