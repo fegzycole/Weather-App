@@ -11,9 +11,8 @@ const dataController = (() => {
 
       if (response.status === 200) {
         return response.json();
-      } else {
-        return 'City not found';
       }
+      return 'City not found';
     } catch (error) {
       return error.message;
     }
