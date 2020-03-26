@@ -35,11 +35,11 @@ searchIcon.addEventListener('click', async () => {
   try {
     const response = await dataController.getWeatherInfo(searchBox.value, unit);
     loader.removeAttribute('style');
+    errorMessage.removeAttribute('style');
 
     if (response === 'City not found') {
       errorMessage.setAttribute('style', 'display: block !important');
     } else {
-      errorMessage.removeAttribute('style');
       contentLoader(response);
     }
   } catch (error) {
