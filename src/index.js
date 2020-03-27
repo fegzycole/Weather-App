@@ -6,19 +6,9 @@ import contentLoader from './contentLoader';
 
 const searchBox = document.querySelector('#location');
 
-const container = document.querySelector('.container');
+const celsiusIcon = document.querySelector('.celsius');
 
-const toggleBtn = document.querySelector('.toggle-btn');
-
-container.addEventListener('click', () => {
-  if (toggleBtn.classList.contains('active')) {
-    toggleBtn.classList.remove('active');
-  } else {
-    toggleBtn.classList.add('active');
-  }
-});
-
-const searchIcon = document.querySelector('.search-logo');
+const fahrenheitIcon = document.querySelector('.fahrenheit');
 
 const loader = document.querySelector('.loader');
 
@@ -26,12 +16,9 @@ const errorMessage = document.querySelector('.error-message');
 
 const resultArea = document.querySelector('.result');
 
-
-searchIcon.addEventListener('click', async () => {
+const handleData = async (unit) => {
   resultArea.innerHTML = '';
   loader.setAttribute('style', 'display: block !important');
-
-  const unit = toggleBtn.classList.contains('active') ? 'imperial' : 'metric';
   try {
     const response = await dataController.getWeatherInfo(searchBox.value, unit);
     loader.removeAttribute('style');
@@ -40,10 +27,14 @@ searchIcon.addEventListener('click', async () => {
     if (response === 'City not found') {
       errorMessage.setAttribute('style', 'display: block !important');
     } else {
-      contentLoader(response);
+      contentLoader(response, unit);
     }
   } catch (error) {
     errorMessage.setAttribute('style', 'display: block !important');
     errorMessage.innerText = error.message;
   }
-});
+};
+
+
+celsiusIcon.addEventListener('click', () => handleData('metric'));
+fahrenheitIcon.addEventListener('click', () => handleData('imperial'));

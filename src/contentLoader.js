@@ -1,8 +1,6 @@
-const displayArea = document.querySelector('.result');
+const displayArea = document.querySelector('.result');;
 
-const toggleBtn = document.querySelector('.toggle-btn');
-
-const contentLoader = (response) => {
+const contentLoader = (response, unit) => {
   displayArea.innerHTML = '';
 
   const cityInfo = document.createElement('div');
@@ -14,7 +12,7 @@ const contentLoader = (response) => {
   const temperature = document.createElement('h3');
   temperature.classList.add('temp');
 
-  if (!toggleBtn.classList.contains('active')) {
+  if (unit === 'metric') {
     temperature.innerHTML = `${Math.floor(response.main.temp)}<span>&#xb0;</span>C`;
   } else {
     temperature.innerHTML = `${Math.floor(response.main.temp)}<span>&#xb0;</span>F`;

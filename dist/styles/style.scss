@@ -51,6 +51,13 @@ body {
 
 .queryArea {
   display: flex;
+  justify-content: space-between;
+}
+
+.celsius,
+.fahrenheit {
+  margin-left: 10px;
+  cursor: pointer;
 }
 
 .header-text{
