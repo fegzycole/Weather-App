@@ -1,4 +1,4 @@
-const displayArea = document.querySelector('.result');;
+const displayArea = document.querySelector('.result');
 
 const contentLoader = (response, unit) => {
   displayArea.innerHTML = '';
@@ -11,6 +11,7 @@ const contentLoader = (response, unit) => {
 
   const temperature = document.createElement('h3');
   temperature.classList.add('temp');
+
 
   if (unit === 'metric') {
     temperature.innerHTML = `${Math.floor(response.main.temp)}<span>&#xb0;</span>C`;
